@@ -1,7 +1,7 @@
 <template>
   <div id="app-layout" :class="[isCollapsed && 'g-sidenav-hidden']">
     <div class="min-height-300 position-absolute w-100 bg-success" />
-    <Sidenav />
+    <Sidenavs />
     <main class="main-content position-relative max-height-vh-100 h-100">
       <Navbar />
       <slot />
@@ -12,7 +12,6 @@
 </template>
 
 <script setup>
-import Sidenav from "~~/examples/Sidenav";
 import Navbar from "~~/examples/Navbar";
 import Footer from "~~/examples/Footer";
 import Configurator from "~~/examples/Configurator";

@@ -5,11 +5,8 @@
     </div>
     <div class="card-body pb-0 p-3">
       <ul class="list-group">
-        <li
-          v-for="({ title: reviewTitle, value, color }, index) of reviews"
-          :key="index"
-          class="list-group-item border-0 d-flex align-items-center px-0 mb-0"
-        >
+        <li v-for="({ title: reviewTitle, value, color }, index) of reviews" :key="index"
+          class="list-group-item border-0 d-flex align-items-center px-0 mb-0">
           <div class="w-100">
             <div class="d-flex mb-2">
               <span class="me-2 text-sm font-weight-bold text-capitalize">
@@ -18,28 +15,15 @@
               <span class="ms-auto text-sm font-weight-bold">{{ value }}%</span>
             </div>
             <div>
-              <ArgonProgress
-                :color="color"
-                variant="gradient"
-                :percentage="value"
-              />
+              <ArgonProgress :color="color" variant="gradient" :percentage="value" />
             </div>
           </div>
         </li>
       </ul>
     </div>
     <div class="card-footer pt-0 p-3 d-flex align-items-center">
-      <div class="w-60">
+      <div class="w-100">
         <p class="text-sm" v-html="description"></p>
-      </div>
-      <div class="w-40 text-end">
-        <a
-          class="btn mb-0 text-end"
-          :class="`bg-gradient-${action.color}`"
-          :href="action.route"
-        >
-          {{ action.label }}
-        </a>
       </div>
     </div>
   </div>
@@ -70,7 +54,7 @@ defineProps({
     default: () => ({
       route: "javascript:;",
       color: "dark",
-      label: "View all reviews",
+      label: "",
     }),
   },
 });

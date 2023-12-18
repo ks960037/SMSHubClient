@@ -42,6 +42,7 @@
     "eslint-plugin-vue": "9.7.0",
     "jkanban": "1.3.1",
     "leaflet": "1.9.2",
+    "libphonenumber-js": "^1.10.52",
     "nuxt-leaflet": "0.0.27",
     "photoswipe": "5.3.3",
     "postcss": "^8.4.32",

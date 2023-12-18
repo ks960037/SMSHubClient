@@ -1,5 +1,5 @@
 <template>
-  <Nav></Nav>
+  <NavbarsLanding></NavbarsLanding>
   <!-- 內容 -->
   <!-- 主標題部分 -->
   <header>
