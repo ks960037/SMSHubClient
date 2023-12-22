@@ -41,9 +41,11 @@
                   </ArgonSwitch>
 
                   <div class="text-center">
-                    <ArgonButton color="success" variant="gradient" full-width class="my-4 mb-2" to="/">
-                      <NuxtLink to="/Dashboards/default/">Sign in</NuxtLink>
-                    </ArgonButton>
+                    <NuxtLink to="/Dashboards/default/">
+                      <ArgonButton color="success" variant="gradient" full-width class="my-4 mb-2" to="/">
+                        Sign in
+                      </ArgonButton>
+                    </NuxtLink>
                   </div>
                   <div class="mb-2 position-relative text-center">
                     <p class="text-sm font-weight-bold mb-2 text-secondary text-border d-inline z-index-2 bg-white px-3">

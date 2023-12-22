@@ -3,69 +3,65 @@
         <div class="row">
             <div class="mx-auto col-12">
                 <div class="mt-4 card card-body">
-                    <h6 class="mb-0">發送簡訊</h6>
-                    <p class="mb-0 text-sm"></p>
+                    <h2 class="mb-0">發送簡訊</h2>
+                    <p class="mb-0 text-sm">上傳發送清單 → 查看辨識結果 → 填入欲發送訊息內容 → 確認發送</p>
                     <hr class="my-3 horizontal dark" />
-                    <label for="projectName" class="form-label">上傳發送清單</label>
-                    <input id="projectName" type="text" class="form-control" />
-                    <div class="mt-4 row">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group">
-                                <label> Private Project </label>
-                                <p class="text-xs form-text text-muted ms-1">
-                                    If you are available for hire outside of the current
-                                    situation, you can encourage others to hire you.
-                                </p>
-                                <div class="form-check form-switch ms-1">
-                                    <input id="flexSwitchCheckDefault" class="form-check-input" type="checkbox"
-                                        onclick="notify(this)" data-type="warning"
-                                        data-content="Once a project is made private, you cannot revert it to a public project."
-                                        data-title="Warning" data-icon="ni ni-bell-55" />
-                                    <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                    <label class="form-label">上傳發送清單</label>
+                    <div class="dropzone">
+                        <input name="file" type="file" @change="onFileChange" class="fallback form-control">
+                    </div>
+                    <div v-if="processedContent">
+                        <hr class="my-3 horizontal dark" />
+                        <label for="projectName" class="form-label">號碼分析結果</label>
+                        <div class="row">
+                            <div class="col" v-for="(numbers, category) in processedContent" :key="category">
+                                <div class="card mt-3">
+                                    <div class="card-header">{{ category }}</div>
+                                    <div class="card-body">
+                                        <div v-for="(number, index) in numbers.slice(0, 3)" :key="index">
+                                            {{ number }}
+                                        </div>
+                                        <div v-if="numbers.length > 10">...</div>
+                                    </div>
+                                    總筆數：{{ numbers.length }}
                                 </div>
                             </div>
                         </div>
+                        <hr class="my-3 horizontal dark" />
                     </div>
-                    <label class="mt-4">Project Description</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mx-auto col-12">
+                <div class="mt-4 card card-body">
+                    <label class="mt-4">簡訊內容</label>
                     <p class="text-xs form-text text-muted ms-1">
-                        This is how others will learn about the project, so make it good!
+                        欲發送的簡訊內容
                     </p>
-                    <div id="editor">
-                        <quill-editor theme="snow" v-model:content="quillContent" contentType="html" />
-                    </div>
-                    <label class="mt-4 form-label">Project Tags</label>
-                    <select id="choices-multiple-remove-button" class="form-control" name="choices-multiple-remove-button"
-                        multiple>
-                        <option value="Choice 1" selected>Choice 1</option>
-                        <option value="Choice 2">Choice 2</option>
-                        <option value="Choice 3">Choice 3</option>
-                        <option value="Choice 4">Choice 4</option>
-                    </select>
-                    <div class="row">
-                        <div class="col-6">
-                            <label class="form-label">Start Date</label>
-                            <flat-pickr v-model="date" class="form-control datetimepicker"
-                                placeholder="Please select start date" :config="config"></flat-pickr>
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label">End Date</label>
-                            <flat-pickr v-model="endDate" class="form-control datetimepicker"
-                                placeholder="Please select end date" :config="config"></flat-pickr>
-                        </div>
-                    </div>
-                    <label class="mt-4 form-label">Starting Files</label>
-                    <form id="dropzone" action="/file-upload" class="form-control dropzone">
-                        <div class="fallback">
-                            <input name="file" type="file" multiple />
-                        </div>
-                    </form>
+                    <textarea class="form-control dropzone" v-model="SMSContent"></textarea>
+
                     <div class="mt-4 d-flex justify-content-end">
                         <button type="button" name="button" class="m-0 btn btn-light">
-                            Cancel
+                            排程發送
                         </button>
-                        <button type="button" name="button" class="m-0 btn bg-gradient-success ms-2">
-                            Create Project
+                        <button type="button" name="button" class="m-0 btn bg-gradient-success ms-2" @click="sendSMS">
+                            立即發送
                         </button>
+                    </div>
+
+                    <!-- 結果顯示於此 -->
+                    <div v-if="apiResponse">
+                        <h2>Response:</h2>
+                        <p>Code: {{ apiResponse.code }}</p>
+                        <p>Message: {{ apiResponse.msg }}</p>
+                        <p>Total Fee: {{ apiResponse.total_fee }}</p>
+                        <p>UID: {{ apiResponse.uid }}</p>
+                        <div v-for="(item, index) in apiResponse.data" :key="index">
+                            <p>Fee: {{ item.fee }}</p>
+                            <p>Mobile: {{ item.mobile }}</p>
+                            <p>SID: {{ item.sid }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,6 +75,7 @@ import { Dropzone } from "dropzone";
 import "@vueup/vue-quill/dist/vue-quill.snow.css";
 import { QuillEditor } from "@vueup/vue-quill";
 import Choices from "choices.js";
+import { parsePhoneNumberFromString } from 'libphonenumber-js'
 
 definePageMeta({
     layout: "default",
@@ -87,13 +84,14 @@ export default {
     components: { QuillEditor, flatPickr },
     data() {
         return {
-            quillContent:
-                "<p>Hello World!</p><p>Some initial <strong>bold</strong> text</p>",
-            date: "",
-            endDate: "",
+            mode: 'upload',  // 預設模式為檔案上傳模式
+            fileContent: '', // 儲存檔案內容的數據屬性
+            processedContent: null, // 分類結果
+            SMSContent: "",
             config: {
                 allowInput: true,
             },
+            apiResponse: null, // API 回應
         };
     },
     mounted() {
@@ -137,13 +135,162 @@ export default {
         }
     },
     methods: {
-        getChoices(id) {
-            const element = document.getElementById(id);
-            if (document.getElementById(id)) {
-                return new Choices(element, {
-                    searchEnabled: false,
-                    allowHTML: true,
-                });
+        // 上傳檔案時調用
+        onFileChange(e) {
+            console.log("開始處理");
+            // 從事件對象中獲取選擇的檔案
+            const file = e.target.files[0];
+            // 創建一個 FileReader 對象來讀取檔案
+            const reader = new FileReader();
+            // 當 FileReader 讀取檔案完成時調用的方法
+            reader.onload = (e) => {
+                // 將檔案的內容儲存到 fileContent 數據屬性中
+                this.fileContent = e.target.result;
+                // 接著處理上傳內容
+                this.processNumbers();
+            };
+            // 讀取檔案的內容
+            reader.readAsText(file);
+        },
+        // 處理上傳內容
+        processNumbers() {
+            console.log("進行分析");
+            this.processedContent = {};
+            // 將檔案內容分割成行
+            let lines;
+            if (this.mode == "upload")
+                lines = this.fileContent.split('\r\n'); // Win系統換行
+            else
+                lines = this.fileContent.split('\n');
+            // 使用 Set 來去除重複的行，然後再轉換回陣列
+            const uniqueLines = [...new Set(lines)];
+            // 對每一行進行處理
+            uniqueLines.forEach(line => {
+                // 使用 libphonenumber-js 來解析行中的電話號碼
+                const phoneNumber = parsePhoneNumberFromString(line, "PH");
+                // 檢查解析出的電話號碼是否有效
+                if (phoneNumber && phoneNumber.isValid()) {
+                    // 分類
+                    const classify = this.getClassifyByNumber(phoneNumber.formatInternational());
+                    if (!this.processedContent[classify]) this.processedContent[classify] = [];
+                    var formatNumber = phoneNumber.number.slice(1); // 去掉 + 號
+                    this.processedContent[classify].push(formatNumber);
+                } else {
+                    if (!this.processedContent["NONE"]) this.processedContent["NONE"] = [];
+                    this.processedContent["NONE"].push('Invalid number')
+                }
+            });
+            console.log("結果：", this.processedContent);
+        },
+        getClassifyByNumber(input) {
+            if (input == null) return 'NONE';
+            var tests = input.split(' ');
+            var first5 = tests[1];
+            switch (first5) {
+                case "907":
+                case "908":
+                case "909":
+                case "910":
+                case "912":
+                case "918":
+                case "919":
+                case "920":
+                case "921":
+                case "922":
+                case "923":
+                case "924":
+                case "925":
+                case "928":
+                case "929":
+                case "930":
+                case "931":
+                case "932":
+                case "933":
+                case "938":
+                case "939":
+                case "942":
+                case "943":
+                case "946":
+                case "947":
+                case "948":
+                case "950":
+                case "951":
+                case "960":
+                case "961":
+                case "962":
+                case "963":
+                case "964":
+                case "968":
+                case "969":
+                case "970":
+                case "973":
+                case "974":
+                case "981":
+                case "988":
+                case "998":
+                case "999":
+                    return "SMART";
+                case "904":
+                case "905":
+                case "906":
+                case "915":
+                case "916":
+                case "917":
+                case "926":
+                case "927":
+                case "935":
+                case "936":
+                case "945":
+                case "952":
+                case "953":
+                case "954":
+                case "955":
+                case "956":
+                case "965":
+                case "966":
+                case "967":
+                case "975":
+                case "977":
+                case "983":
+                case "986":
+                case "987":
+                case "989":
+                case "995":
+                case "997":
+                    return "GLOBE";
+                case "991":
+                case "992":
+                case "993":
+                case "994":
+                    return "DITO";
+                case "996":
+                    return "CHERRY";
+                default:
+                    return "NONE";
+            }
+        },
+        // 發送 API
+        async sendSMS() {
+            try {
+                const response = await $fetch(
+                    'https://httpsms.rtl.hk/sms-server/sendsms',
+                    {
+                        method: 'POST',
+                        body:
+                        {
+                            clientid: "b0f0e2",
+                            password: "5690dddfa28ae085d23518a035707282",
+                            mobile: "00639650975003,00639057431218,00639056405133,00639928793385",
+                            content: this.SMSContent,
+                            extend: null,
+                            uid: null,
+                            sendtime: null
+                        }
+                    });
+                this.apiResponse = response;
+            } catch (error) {
+                // 處理錯誤...
+                console.log(error);
             }
         },
     },
