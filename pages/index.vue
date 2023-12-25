@@ -14,21 +14,25 @@
           <div class="col-lg-7 d-flex">
             <div class="card card-body blur text-md-start text-center px-sm-5 shadow-lg mt-sm-5 py-sm-5">
               <h1 class="text-gradient text-primary mb-0">
-                簡訊服務公司.
+                快訊遞
               </h1>
               <h2 class="text-dark mb-4">
-                更好 更快 更易用
+                快速觸達，廣泛連結
               </h2>
-              <p class="lead text-dark pe-md-5 me-md-5">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. provident fuga?
+              <p class="lead text-dark pe-md-4 me-md-4">
+                專業簡訊平台，迅速傳遞訊息至千萬客戶，有效提升您的業務溝通與聯繫效率，是您理想的市場推廣夥伴。
               </p>
               <div class="buttons">
-                <button type="button" class="btn btn-rounded bg-gradient-primary mt-4">
-                  Contact Us
-                </button>
-                <button type="button" class="btn btn-rounded btn-outline-secondary mt-4 ms-2">
-                  Read More
-                </button>
+                <NuxtLink to="https://t.me/hk888online">
+                  <button type="button" class="btn btn-rounded bg-gradient-primary mt-4">
+                    聯絡我們
+                  </button>
+                </NuxtLink>
+                <NuxtLink to="#">
+                  <button type="button" class="btn btn-rounded btn-outline-secondary mt-4 ms-2">
+                    了解更多
+                  </button>
+                </NuxtLink>
               </div>
             </div>
           </div>
@@ -46,7 +50,7 @@
             <h5 class="mt-2">
               簡單
             </h5>
-            <p>Lorem ipsum dolor sit</p>
+            <p>體驗我們的簡訊平台，以最簡單的傳遞您的信息，直接、無障礙地連接您與客戶。</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -54,7 +58,7 @@
             <h5 class="mt-2">
               快速
             </h5>
-            <p>cum accusantium sequi, mollitia eos soluta, vero animi quod?</p>
+            <p>快速簡訊平台，讓您的信息迅速傳遞，無需等待，即時連結您與客戶高效溝通。</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -62,7 +66,7 @@
             <h5 class="mt-2">
               方便
             </h5>
-            <p>alias nostrum maiores commodi provident eligendi assumenda ullam.</p>
+            <p>方便快捷的簡訊服務，讓您輕鬆管理通訊，無論何時何地都能與客戶保持聯繫。</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
@@ -70,7 +74,7 @@
             <h5 class="mt-2">
               高效
             </h5>
-            <p>blanditiis perspiciatis officia corrupti magni</p>
+            <p>高效簡訊平台，確保您的信息準確送達，提升效能，讓每一次互動都更具價值。</p>
           </div>
         </div>
       </div>
@@ -78,15 +82,15 @@
   </section>
 
   <!-- 主要賣點 -->
-  <section>
+  <section id="point1">
     <div class="container">
       <div class="row">
         <div class="col-md-6 ms-auto me-auto text-center">
           <h2 class="text-gradient text-primary">
-            向你的客戶快速寄送簡訊
+            快速寄送簡訊
           </h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            了解我們的平台如何運作
           </p>
         </div>
       </div>
@@ -111,7 +115,7 @@
           <div class="position-relative ms-n4 mb-5 mt-8 d-md-block d-none">
             <div class="blur-shadow-image">
               <img class="image-right rounded-3 img-fluid position-relative bg-cover"
-                src="https://cw-image-resizer.cwg.tw/resize/uri/https%3A%2F%2Fstorage.googleapis.com%2Fwww-cw-com-tw%2Farticle%2F202010%2Farticle-5f8ecc2cc3961.jpg/?w=1600&format=webp"
+                src="https://storage.googleapis.com/www-cheers-com-tw/article/202002/article-5e4757c6e78ee.jpg"
                 alt="image">
             </div>
           </div>
@@ -119,14 +123,13 @@
             如何更好的傳達資訊
           </h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa itaque ducimus incidunt quos consequatur!
-            Facere voluptates quo aut reprehenderit quos neque dolor facilis quibusdam quaerat quis? Iste, maxime?
-            Mollitia, earum.
+            我們的簡訊平台專為快速發送大量簡訊而設計，結合了先進的技術和用戶友好的介面。首先，平台採用高效的數據處理系統，能夠在短時間內處理和發送成千上萬的簡訊。這意味著無論您需要傳達的信息有多麼龐大，我們的系統都能迅速應對。
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa itaque ducimus incidunt quos consequatur!
-            Facere voluptates quo aut reprehenderit quos neque dolor facilis quibusdam quaerat quis? Iste, maxime?
-            Mollitia, earum.
+            此外，我們的平台具有直觀的操作界面，使用者可以輕鬆上傳和管理接收者名單，並且能夠設計和定制簡訊內容。透過批量發送功能，用戶只需幾個簡單步驟，就能實現大規模的信息傳播，大大節省了時間和精力。
+          </p>
+          <p>
+            我們還提供了詳細的發送報告，讓您能夠追蹤每條簡訊的送達狀態，確保信息準確無誤地傳遞給每一位接收者。總的來說，我們的簡訊平台不僅快速高效，而且用戶友好，完全適應現代快節奏的商業和通訊需求。
           </p>
         </div>
       </div>
@@ -150,7 +153,7 @@
         </g>
       </svg>
     </div>
-    <div class="container py-lg-10 py-7">
+    <div class="container py-lg-10 py-7" id="point2">
       <div class="row">
         <div class="col-lg-6 d-flex justify-content-center flex-column">
           <div id="carouselExampleIndicator" class="carousel slide py-7" data-bs-ride="carousel">
@@ -175,18 +178,20 @@
             <!-- 輪播內容 -->
             <div class="carousel-inner">
               <h2 class="text-white mb-0">
-                合作夥伴
+                技術支持
               </h2>
               <p class="text-white opacity-8 mb-1">
-                Lorem ipsum
+                我們獲得以下這些服務商的技術支持
               </p>
               <hr class="text-white horizontal opacity-6 mb-4 mt-2 w-25 text-start">
               <!-- 輪播資訊 -->
               <div class="carousel-item active">
                 <h6 class="text-white opacity-8 pe-5">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo
-                  rerum, rem nesciunt soluta odio laboriosam provident. Dolor aperiam quisquam eius nemo asperiores,
-                  voluptatibus laborum impedit libero sed tenetur sit iure!
+                  技術商功能描述：
+                  提供定制化的技術解決方案，滿足不同行業和企業的特定需求。
+                  利用最新的技術趨勢和創新，如人工智能、大數據分析，以及雲計算，為客戶創造競爭優勢。
+                  專業團隊負責系統的整合和實施，確保技術方案與客戶的現有系統無縫對接。
+                  提供從前期咨詢、系統設計到後期部署和維護的全方位服務。
                 </h6>
               </div>
               <div class="carousel-item">
@@ -279,19 +284,18 @@
     </div>
   </section>
   <section class="py-7">
-    <div class="container">
+    <div class="container" id="point3">
       <div class="row">
         <div class="col-md-5 ms-auto me-auto text-center">
           <div class="p-3 info-hover-warning">
             <div class="icon icon-shape bg-gradient-primary shadow icon-shape-circle text-primary">
               <i class="fa fa-cogs" />
             </div>
+            <h3 class="text-gradient text-primary mb-0 mt-4">
+              使用場景
+            </h3>
           </div>
-          <h3 class="text-gradient text-primary mb-0 mt-4">
-            方便易用的工具
-          </h3>
-          <h3>如何達到</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam nam ipsum praesentium maiores</p>
+          <p>如何透過我們的服務迅速拓展您的業務？</p>
         </div>
       </div>
       <div class="row mt-5">
@@ -304,10 +308,10 @@
                   <img src="~/assets/img/converse.svg" alt="交談圖標">
                 </div>
                 <h2 class="text-white up mb-0">
-                  Search and Discover!
+                  產品推廣
                 </h2>
                 <p class="lead up">
-                  Website visitors
+                  角色定位：產品經理
                 </p>
                 <button type="button" class="btn btn-white btn-lg mt-3 up">
                   Get Started
@@ -319,29 +323,28 @@
         <div class="col-md-5 me-auto my-auto ms-md-5">
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>1. Doloremque aperiam dolores.</h5>
+              <h5>1. 目標客戶精準定位</h5>
               <p>
-                Recusandae corrupti nam aperiam vitae unde dolorum? Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Impedit voluptate, voluptatibus hic ipsam libero consequuntur a aperiam esse sunt ratione? Delectus
-                voluptates possimus odit tempore magni hic nesciunt recusandae animi?
+                利用平台的數據分析功能，精確識別目標客戶群，確保推廣信息發送給最有可能對產品感興趣的客戶。
+                透過客戶行為和偏好的深入分析，定制個性化的推廣信息，提高轉化率。
               </p>
             </div>
           </div>
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>2. Repudiandae molestias quisquam</h5>
+              <h5>2. 即時推廣活動通知</h5>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, exercitationem. Repudiandae ratione sit
-                blanditiis consectetur, rerum praesentium non ab.
+                簡訊平台能夠即時發送大量訊息，確保客戶能夠在第一時間獲得最新的產品推廣和特惠信息。
+                這種即時性對於限時優惠或特殊活動尤為重要，幫助提升客戶參與度和銷售機會。
               </p>
             </div>
           </div>
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>3. Labore repellendus aperiam</h5>
+              <h5>3. 追蹤與反饋分析</h5>
               <p>
-                Consectetur adipisicing elit. Similique at nam ipsa nostrum vero natus quae obcaecati quisquam. Ipsam
-                deleniti natus mollitia eveniet deserunt nobis dolores inventore corporis error omnis..
+                平台提供的追蹤和分析工具可以幫助企業了解簡訊推廣的效果。
+                這些數據有助於優化未來的推廣策略，提升營銷效率和ROI。
               </p>
             </div>
           </div>
@@ -352,28 +355,28 @@
         <div class="col-md-5 ms-auto my-auto">
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>1. Lsunt asperiores ipsum molestiae!</h5>
+              <h5>1. 自動化服務提醒</h5>
               <p>
-                Accusantium aliquid nobis mollitia corporis quam sint quos, necessitatibus reiciendis optio officia
-                tempora fuga laboriosam!
+                簡訊平台可以自動發送服務提醒，如預約確認、付款提醒或保養通知，提升客戶體驗。
+                自動化的流程降低了人工操作的錯誤率和工作量，提高了效率。
               </p>
             </div>
           </div>
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>2. Vero earum iure iusto!</h5>
+              <h5>2. 即時客戶支持</h5>
               <p>
-                placeat dolorum omnis dicta totam repudiandae, provident magni expedita nostrum repellendus praesentium!
-                Lorem ipsum dolor sit, Laboriosam nemo placeat tempora fugit eligendi eum est ullam?
+                客戶可以透過簡訊快速獲得支援，如問題解答或緊急服務請求。
+                這種即時性對於緊急情況特別重要，能夠快速解決客戶的問題，提升客戶滿意度。
               </p>
             </div>
           </div>
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>3. Quos quae dignissimos</h5>
+              <h5>3. 客戶反饋收集</h5>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae magni, accusamus ea omnis accusantium
-                reprehenderit ipsa animi placeat.
+                透過簡訊輕鬆收集客戶反饋，如滿意度調查或產品使用心得。
+                客戶反饋對於產品和服務的改進至關重要，有助於企業更好地了解客戶需求和市場趨勢。
               </p>
             </div>
           </div>
@@ -387,10 +390,10 @@
                   <img src="~/assets/img/converse.svg" alt="交談圖標">
                 </div>
                 <h2 class="text-white up mb-0">
-                  Talk and Meet!
+                  客戶服務與支持
                 </h2>
                 <p class="lead up">
-                  Social activities
+                  角色定位：客服人員
                 </p>
                 <button type="button" class="btn btn-white btn-lg mt-3 up">
                   Get Started
@@ -411,22 +414,22 @@
         <div class="col-md-3 mb-4 ms-auto">
           <div>
             <h6 class="text-gradient text-primary font-weight-bolder">
-              簡訊服務示範頁
+              快訊遞
             </h6>
           </div>
           <div>
             <h6 class="mt-3 mb-2 opacity-8">
-              副標題
+              快速觸達，廣泛連結
             </h6>
             <ul class="d-flex flex-row ms-n3 nav">
               <li class="nav-item">
                 <a class="nav-link pe-1" href="https://www.facebook.com/" target="_blank">
-                  <i class="fab fa-facebook text-lg opacity-8">臉書</i>
+                  <i class="fab fa-facebook text-lg opacity-8"></i>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link pe-1" href="https://twitter.com/" target="_blank">
-                  <i class="fab fa-twitter text-lg opacity-8">推特</i>
+                  <i class="fab fa-twitter text-lg opacity-8"></i>
                 </a>
               </li>
             </ul>
@@ -544,7 +547,6 @@
     </div>
   </footer>
 </template>
-
 
 <script setup>
 definePageMeta({
