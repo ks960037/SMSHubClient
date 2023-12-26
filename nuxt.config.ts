@@ -41,7 +41,6 @@ export default defineNuxtConfig({
     global: true,
     dirs: ["~/components/icons", "~/components"],
   },
-  devtools: { enabled: true },
   imports: {
     autoImport: true,
   },
@@ -53,5 +52,14 @@ export default defineNuxtConfig({
   ],
   modules: [
     "@pinia/nuxt",
+    "@nuxtjs/i18n",
   ],
+  i18n: {
+    strategy: 'no_prefix',
+    langDir: 'locales',
+    locales: [
+      { code: 'en', iso: 'en-US', file: 'en.json' },
+      { code: 'zh', iso: 'zh-TW', file: 'zh.json' }
+    ]
+  }
 });
