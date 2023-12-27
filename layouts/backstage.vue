@@ -1,9 +1,7 @@
 <template>
   <div>
-    <div
-      class="landing-bg h-100 bg-gradient-primary position-fixed w-100"
-    ></div>
-    <Sidenav />
+    <div class="landing-bg h-100 bg-gradient-primary position-fixed w-100"></div>
+    <SidenavsBackstage />
     <main class="main-content position-relative border-radius-lg">
       <slot />
     </main>
@@ -11,7 +9,6 @@
 </template>
 
 <script setup>
-import Sidenav from "@/examples/Sidenav";
 import { useNavStore } from "~~/stores/NavStore";
 const navStore = useNavStore();
 navStore.sidenavType = "bg-default bg-transparent";

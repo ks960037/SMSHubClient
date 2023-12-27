@@ -12,4 +12,7 @@
 
 <script setup>
 setResponseStatus(404)
+definePageMeta({
+    layout: false,
+});
 </script>

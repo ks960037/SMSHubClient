@@ -16,7 +16,6 @@
               <h1 class="text-gradient text-primary mb-0">
                 快訊遞
               </h1>
-              <p>{{ $t('hello') }}</p>
               <h2 class="text-dark mb-4">
                 快速觸達，廣泛連結
               </h2>
