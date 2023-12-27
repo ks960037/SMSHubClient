@@ -10,14 +10,15 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^1.0.6",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@types/leaflet": "1.9.0",
-    "nuxt": "3.0.0",
+    "nuxt": "^3.8.2",
     "nuxt-vite": "0.3.5",
     "sass": "1.56.1",
     "sass-loader": "^13.3.2",
     "typescript": "4.9.3",
-    "@nuxt/devtools": "latest"
+    "vue-i18n": "^9.8.0"
   },
   "dependencies": {
     "@babel/core": "^7.23.6",
@@ -28,8 +29,8 @@
     "@fullcalendar/vue3": "5.11.2",
     "@nuxtjs/eslint-config": "12.0.0",
     "@nuxtjs/eslint-module": "3.1.0",
-    "@nuxtjs/tailwindcss": "^6.10.1",
     "@nuxtjs/i18n": "^8.0.0",
+    "@nuxtjs/tailwindcss": "^6.10.1",
     "@pinia/nuxt": "0.4.4",
     "@popperjs/core": "2.11.6",
     "@vueup/vue-quill": "1.0.0",
@@ -47,9 +48,8 @@
     "libphonenumber-js": "^1.10.52",
     "nuxt-leaflet": "0.0.27",
     "photoswipe": "5.3.3",
+    "pinia": "^2.1.7",
     "postcss": "^8.4.32",
-    "prettier": "2.7.1",
-    "prettier-plugin-tailwindcss": "^0.5.9",
     "simple-datatables": "4.0.7",
     "vue": "^3.3.11",
     "vue-count-to": "1.0.13",
@@ -58,7 +58,6 @@
     "vue-star-rating": "2.1.0",
     "vue-sweetalert2": "5.0.5",
     "vue-template-compiler": "^2.7.15",
-    "vue2-leaflet": "2.7.1",
     "vue3-apexcharts": "1.4.1"
   }
 }
