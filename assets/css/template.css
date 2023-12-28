@@ -30104,8 +30104,7 @@ pre[class*="language-"] {
   content: "\e906";
 }
 
-.fc {
-}
+.fc {}
 
 .fc .fc-button {
   border-radius: 0;
@@ -30135,8 +30134,7 @@ pre[class*="language-"] {
   border-style: none;
 }
 
-.fc {
-}
+.fc {}
 
 .fc .fc-button {
   display: inline-block;
@@ -30168,8 +30166,7 @@ pre[class*="language-"] {
   opacity: 0.65;
 }
 
-.fc {
-}
+.fc {}
 
 .fc .fc-button-primary {
   color: #fff;

@@ -14,23 +14,23 @@
           <div class="col-lg-7 d-flex">
             <div class="card card-body blur text-md-start text-center px-sm-5 shadow-lg mt-sm-5 py-sm-5">
               <h1 class="text-gradient text-primary mb-0">
-                快訊遞
+                {{ $t('title') }}
               </h1>
               <h2 class="text-dark mb-4">
-                快速觸達，廣泛連結
+                {{ $t('slogan') }}
               </h2>
               <p class="lead text-dark pe-md-4 me-md-4">
-                專業簡訊平台，迅速傳遞訊息至千萬客戶，有效提升您的業務溝通與聯繫效率，是您理想的市場推廣夥伴。
+                {{ $t('short-description') }}
               </p>
               <div class="buttons">
                 <NuxtLink to="https://t.me/hk888online">
                   <button type="button" class="btn btn-rounded bg-gradient-primary mt-4">
-                    聯絡我們
+                    {{ $t('contact-us') }}
                   </button>
                 </NuxtLink>
                 <NuxtLink to="#">
                   <button type="button" class="btn btn-rounded btn-outline-secondary mt-4 ms-2">
-                    了解更多
+                    {{ $t('read-more') }}
                   </button>
                 </NuxtLink>
               </div>
@@ -48,33 +48,33 @@
         <div class="col-lg-3 col-md-6">
           <div class="info">
             <h5 class="mt-2">
-              簡單
+              {{ $t('feature1') }}
             </h5>
-            <p>體驗我們的簡訊平台，以最簡單的傳遞您的信息，直接、無障礙地連接您與客戶。</p>
+            <p>{{ $t('feature-description1') }}</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="info">
             <h5 class="mt-2">
-              快速
+              {{ $t('feature2') }}
             </h5>
-            <p>快速簡訊平台，讓您的信息迅速傳遞，無需等待，即時連結您與客戶高效溝通。</p>
+            <p>{{ $t('feature-description2') }}</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="info">
             <h5 class="mt-2">
-              方便
+              {{ $t('feature3') }}
             </h5>
-            <p>方便快捷的簡訊服務，讓您輕鬆管理通訊，無論何時何地都能與客戶保持聯繫。</p>
+            <p>{{ $t('feature-description3') }}</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
           <div class="info">
             <h5 class="mt-2">
-              高效
+              {{ $t('feature4') }}
             </h5>
-            <p>高效簡訊平台，確保您的信息準確送達，提升效能，讓每一次互動都更具價值。</p>
+            <p>{{ $t('feature-description4') }}</p>
           </div>
         </div>
       </div>
@@ -87,10 +87,10 @@
       <div class="row">
         <div class="col-md-6 ms-auto me-auto text-center">
           <h2 class="text-gradient text-primary">
-            快速寄送簡訊
+            {{ $t('point-title1') }}
           </h2>
           <p>
-            了解我們的平台如何運作
+            {{ $t('point-description1') }}
           </p>
         </div>
       </div>
@@ -120,16 +120,16 @@
             </div>
           </div>
           <h3 class="mb-4">
-            如何更好的傳達資訊
+            {{ $t('little-title') }}
           </h3>
           <p>
-            我們的簡訊平台專為快速發送大量簡訊而設計，結合了先進的技術和用戶友好的介面。首先，平台採用高效的數據處理系統，能夠在短時間內處理和發送成千上萬的簡訊。這意味著無論您需要傳達的信息有多麼龐大，我們的系統都能迅速應對。
+            {{ $t('little-description1') }}
           </p>
           <p>
-            此外，我們的平台具有直觀的操作界面，使用者可以輕鬆上傳和管理接收者名單，並且能夠設計和定制簡訊內容。透過批量發送功能，用戶只需幾個簡單步驟，就能實現大規模的信息傳播，大大節省了時間和精力。
+            {{ $t('little-description2') }}
           </p>
           <p>
-            我們還提供了詳細的發送報告，讓您能夠追蹤每條簡訊的送達狀態，確保信息準確無誤地傳遞給每一位接收者。總的來說，我們的簡訊平台不僅快速高效，而且用戶友好，完全適應現代快節奏的商業和通訊需求。
+            {{ $t('little-description3') }}
           </p>
         </div>
       </div>
@@ -178,20 +178,16 @@
             <!-- 輪播內容 -->
             <div class="carousel-inner">
               <h2 class="text-white mb-0">
-                技術支持
+                {{ $t('tech-supporter') }}
               </h2>
               <p class="text-white opacity-8 mb-1">
-                我們獲得以下這些服務商的技術支持
+                {{ $t('tech-desc') }}
               </p>
               <hr class="text-white horizontal opacity-6 mb-4 mt-2 w-25 text-start">
               <!-- 輪播資訊 -->
               <div class="carousel-item active">
                 <h6 class="text-white opacity-8 pe-5">
-                  技術商功能描述：
-                  提供定制化的技術解決方案，滿足不同行業和企業的特定需求。
-                  利用最新的技術趨勢和創新，如人工智能、大數據分析，以及雲計算，為客戶創造競爭優勢。
-                  專業團隊負責系統的整合和實施，確保技術方案與客戶的現有系統無縫對接。
-                  提供從前期咨詢、系統設計到後期部署和維護的全方位服務。
+                  {{ $t('supporter-desc') }}
                 </h6>
               </div>
               <div class="carousel-item">
@@ -292,29 +288,30 @@
               <i class="fa fa-cogs" />
             </div>
             <h3 class="text-gradient text-primary mb-0 mt-4">
-              使用場景
+              {{ $t('title-using-scene') }}
             </h3>
           </div>
-          <p>如何透過我們的服務迅速拓展您的業務？</p>
+          <p>{{ $t('description-using-scene') }}</p>
         </div>
       </div>
       <div class="row mt-5">
         <div class="col-md-4 ms-auto my-auto">
           <div class="cursor-pointer">
             <div class="card card-background tilt" data-tilt="">
-              <div class="full-background" style="background-color: #005555" />
+              <div class="full-background"
+                style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');" />
               <div class="card-body pt-7 text-center">
                 <div class="icon icon-lg up mb-3">
                   <img src="~/assets/img/converse.svg" alt="交談圖標">
                 </div>
                 <h2 class="text-white up mb-0">
-                  產品推廣
+                  {{ $t('using-scene1') }}
                 </h2>
                 <p class="lead up">
-                  角色定位：產品經理
+                  {{ $t('role-play1') }}
                 </p>
                 <button type="button" class="btn btn-white btn-lg mt-3 up">
-                  Get Started
+                  {{ $t('get-started') }}
                 </button>
               </div>
             </div>
@@ -323,28 +320,25 @@
         <div class="col-md-5 me-auto my-auto ms-md-5">
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>1. 目標客戶精準定位</h5>
+              <h5>{{ $t('scene1-title1') }}</h5>
               <p>
-                利用平台的數據分析功能，精確識別目標客戶群，確保推廣信息發送給最有可能對產品感興趣的客戶。
-                透過客戶行為和偏好的深入分析，定制個性化的推廣信息，提高轉化率。
+                {{ $t('scene1-desc1') }}
               </p>
             </div>
           </div>
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>2. 即時推廣活動通知</h5>
+              <h5>{{ $t('scene1-title2') }}</h5>
               <p>
-                簡訊平台能夠即時發送大量訊息，確保客戶能夠在第一時間獲得最新的產品推廣和特惠信息。
-                這種即時性對於限時優惠或特殊活動尤為重要，幫助提升客戶參與度和銷售機會。
+                {{ $t('scene1-desc2') }}
               </p>
             </div>
           </div>
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>3. 追蹤與反饋分析</h5>
+              <h5>{{ $t('scene1-title3') }}</h5>
               <p>
-                平台提供的追蹤和分析工具可以幫助企業了解簡訊推廣的效果。
-                這些數據有助於優化未來的推廣策略，提升營銷效率和ROI。
+                {{ $t('scene1-desc3') }}
               </p>
             </div>
           </div>
@@ -355,28 +349,25 @@
         <div class="col-md-5 ms-auto my-auto">
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>1. 自動化服務提醒</h5>
+              <h5>{{ $t('scene2-title1') }}</h5>
               <p>
-                簡訊平台可以自動發送服務提醒，如預約確認、付款提醒或保養通知，提升客戶體驗。
-                自動化的流程降低了人工操作的錯誤率和工作量，提高了效率。
+                {{ $t('scene2-desc1') }}
               </p>
             </div>
           </div>
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>2. 即時客戶支持</h5>
+              <h5>{{ $t('scene2-title2') }}</h5>
               <p>
-                客戶可以透過簡訊快速獲得支援，如問題解答或緊急服務請求。
-                這種即時性對於緊急情況特別重要，能夠快速解決客戶的問題，提升客戶滿意度。
+                {{ $t('scene2-desc2') }}
               </p>
             </div>
           </div>
           <div class="p-3 info-horizontal d-flex">
             <div>
-              <h5>3. 客戶反饋收集</h5>
+              <h5>{{ $t('scene2-title3') }}</h5>
               <p>
-                透過簡訊輕鬆收集客戶反饋，如滿意度調查或產品使用心得。
-                客戶反饋對於產品和服務的改進至關重要，有助於企業更好地了解客戶需求和市場趨勢。
+                {{ $t('scene2-desc3') }}
               </p>
             </div>
           </div>
@@ -384,19 +375,20 @@
         <div class="col-md-4 me-auto my-auto ms-md-5">
           <div class="cursor-pointer">
             <div class="card card-background tilt" data-tilt="">
-              <div class="full-background" style="background-color: #005555" />
+              <div class="full-background"
+                style="background-image: url('https://images.unsplash.com/photo-1525182008055-f88b95ff7980?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');" />
               <div class="card-body pt-7 text-center">
                 <div class="icon icon-lg up mb-3">
                   <img src="~/assets/img/converse.svg" alt="交談圖標">
                 </div>
                 <h2 class="text-white up mb-0">
-                  客戶服務與支持
+                  {{ $t('using-scene2') }}
                 </h2>
                 <p class="lead up">
-                  角色定位：客服人員
+                  {{ $t('role-play2') }}
                 </p>
                 <button type="button" class="btn btn-white btn-lg mt-3 up">
-                  Get Started
+                  {{ $t('get-started') }}
                 </button>
               </div>
             </div>
@@ -414,12 +406,12 @@
         <div class="col-md-3 mb-4 ms-auto">
           <div>
             <h6 class="text-gradient text-primary font-weight-bolder">
-              快訊遞
+              {{ $t('title') }}
             </h6>
           </div>
           <div>
             <h6 class="mt-3 mb-2 opacity-8">
-              快速觸達，廣泛連結
+              {{ $t('slogan') }}
             </h6>
             <ul class="d-flex flex-row ms-n3 nav">
               <li class="nav-item">

@@ -9,38 +9,42 @@
                         <!-- 標題 -->
                         <a class="navbar-brand font-weight-bolder ms-sm-3" href="#" rel="tooltip" title="title"
                             data-placement="bottom" target="_self">
-                            快訊遞
+                            {{ $t('title') }}
                         </a>
                         <nuxt-link to="authentication/signin/basic"
-                            class="btn btn-sm  bg-gradient-primary  btn-round mb-0 ms-auto d-lg-none d-block">Login</nuxt-link>
+                            class="btn btn-sm  bg-gradient-primary  btn-round mb-0 ms-auto d-lg-none d-block">{{ $t('login')
+                            }}</nuxt-link>
                         <div id="navigation" class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0">
                             <!-- 下拉菜單範例 -->
                             <ul class="navbar-nav navbar-nav-hover mx-auto">
                                 <li class="nav-item dropdown dropdown-hover mx-2">
                                     <a href="#point1"
                                         class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-                                        快速寄送
+                                        {{ $t('point1') }}
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown dropdown-hover mx-2">
                                     <a href="#point2"
                                         class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-                                        技術支持
+                                        {{ $t('point2') }}
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown dropdown-hover mx-2">
                                     <a href="#point3"
                                         class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-                                        使用場警
+                                        {{ $t('point3') }}
                                     </a>
                                 </li>
                             </ul>
-                            <ul class="navbar-nav navbar-nav-hover mx-auto">
-                            </ul>
-                            <ul class="navbar-nav d-lg-block d-none">
+                            <ul class="navbar-nav d-lg-flex d-none">
+                                <select class="btn btn-sm mb-0" v-model="locale">
+                                    <option value="en">en</option>
+                                    <option value="zh">中文</option>
+                                </select>
                                 <li class="nav-item">
                                     <nuxt-link to="authentication/signin/basic"
-                                        class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1">Login</nuxt-link>
+                                        class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1">{{ $t('login')
+                                        }}</nuxt-link>
                                 </li>
                             </ul>
                         </div>
@@ -59,6 +63,11 @@
     transition: transform 0.3s ease-in-out;
 }
 </style>
+
+<script setup>
+import { useI18n } from 'vue-i18n'
+const { locale, setLocale } = useI18n()
+</script>
 
 <script>
 export default {
