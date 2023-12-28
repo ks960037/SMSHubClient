@@ -133,6 +133,8 @@ export default {
                 addRemoveLinks: true,
             });
         }
+        const { data } = useFetch('/api/hello')
+        console.log(data);
     },
     methods: {
         // 上傳檔案時調用
