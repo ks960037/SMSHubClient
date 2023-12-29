@@ -133,8 +133,9 @@ export default {
                 addRemoveLinks: true,
             });
         }
-        const { data } = useFetch('/api/hello')
-        console.log(data);
+        console.log("嘗試連線資料庫");
+        const { response } = useFetch('/api/post')
+        console.log(response);
     },
     methods: {
         // 上傳檔案時調用

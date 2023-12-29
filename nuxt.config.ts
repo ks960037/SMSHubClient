@@ -61,5 +61,12 @@ export default defineNuxtConfig({
       { code: 'en', iso: 'en-US', file: 'en.json' },
       { code: 'zh', iso: 'zh-TW', file: 'zh.json' }
     ]
+  },
+  runtimeConfig: {
+    dburl: process.env.DATABASE_URL,
+    dbName: process.env.DBNAME,
+    user: process.env.DB_USER,
+    pass: process.env.DB_PASSWORD,
+    authSource: process.env.DB_AUTHSOURCE,
   }
 });
