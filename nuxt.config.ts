@@ -34,6 +34,11 @@ export default defineNuxtConfig({
           src: "https://buttons.github.io/buttons.js",
           async: true,
         },
+        {
+          type: "text/javascript",
+          src: "/_nuxt/assets/js/choices.min.js",
+          async: true,
+        },
       ],
     },
   },
@@ -60,7 +65,12 @@ export default defineNuxtConfig({
     locales: [
       { code: 'en', iso: 'en-US', file: 'en.json' },
       { code: 'zh', iso: 'zh-TW', file: 'zh.json' }
-    ]
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: "root", // 為了更好的搜尋引擎優化，建議將redirectOn 設定為root。
+    }
   },
   runtimeConfig: {
     dburl: process.env.DATABASE_URL,

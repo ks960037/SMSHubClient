@@ -11,8 +11,13 @@
                             data-placement="bottom" target="_self">
                             {{ $t('title') }}
                         </a>
+                        <select class="btn btn-sm btn-round mb-0 ms-auto d-lg-none d-block"
+                            style="padding:0 10px; height: 36px;line-height:36px;" v-model="locale">
+                            <option value="en">en</option>
+                            <option value="zh">中文</option>
+                        </select>
                         <nuxt-link to="authentication/signin/basic"
-                            class="btn btn-sm  bg-gradient-primary  btn-round mb-0 ms-auto d-lg-none d-block">{{ $t('login')
+                            class="btn btn-sm bg-gradient-primary btn-round mb-0 d-lg-none d-block">{{ $t('login')
                             }}</nuxt-link>
                         <div id="navigation" class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0">
                             <!-- 下拉菜單範例 -->
@@ -36,14 +41,16 @@
                                     </a>
                                 </li>
                             </ul>
+                            <!-- 電腦版 -->
                             <ul class="navbar-nav d-lg-flex d-none">
-                                <select class="btn btn-sm mb-0" v-model="locale">
+                                <select class="mb-0 btn btn-sm btn-round"
+                                    style="padding:0 10px; height: 36px;line-height:36px;" v-model="locale">
                                     <option value="en">en</option>
                                     <option value="zh">中文</option>
                                 </select>
-                                <li class="nav-item">
+                                <li class="nav-item ms-1">
                                     <nuxt-link to="authentication/signin/basic"
-                                        class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1">{{ $t('login')
+                                        class="btn btn-sm bg-gradient-primary btn-round mb-0">{{ $t('login')
                                         }}</nuxt-link>
                                 </li>
                             </ul>
@@ -66,10 +73,12 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
+import '@/assets/js/choices.min.js'
 const { locale, setLocale } = useI18n()
 </script>
 
 <script>
+
 export default {
     data() {
         return {
@@ -92,6 +101,12 @@ export default {
     },
     mounted() {
         window.addEventListener("scroll", this.handleScroll);
+        if (document.getElementById('choice-button')) {
+            var element = document.getElementById('choice-button');
+            const example = new Choices(element, {
+                searchEnabled: false
+            });
+        }
     },
     beforeDestroy() {
         window.removeEventListener("scroll", this.handleScroll);
