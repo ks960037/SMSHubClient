@@ -136,6 +136,9 @@ devDependencies:
   '@types/leaflet':
     specifier: 1.9.0
     version: 1.9.0
+  mongoose-paginate-v2:
+    specifier: ^1.7.4
+    version: 1.7.4
   nuxt:
     specifier: ^3.8.2
     version: 3.9.0(eslint@8.27.0)(rollup@3.29.4)(sass@1.56.1)(typescript@4.9.3)(vite@5.0.10)
@@ -7199,6 +7202,11 @@ packages:
       bson: 6.2.0
       mongodb-connection-string-url: 3.0.0
     dev: false
+
+  /mongoose-paginate-v2@1.7.4:
+    resolution: {integrity: sha512-2oUOH/2hrtW0Ki5dJbwxsLBeVafVBfE84QiJsr7tYBQVxUk1v5usDvRa29LpBtANMpBe7eeLUTI2tyjLSk3/Yg==}
+    engines: {node: '>=4.0.0'}
+    dev: true
 
   /mongoose@8.0.3:
     resolution: {integrity: sha512-LJRT0yP4TW14HT4r2RkxqyvoTylMSzWpl5QOeVHTnRggCLQSpkoBdgbUtORFq/mSL2o9cLCPJz+6uzFj25qbHw==}

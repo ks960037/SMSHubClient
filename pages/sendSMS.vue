@@ -133,9 +133,7 @@ export default {
                 addRemoveLinks: true,
             });
         }
-        console.log("嘗試連線資料庫");
-        const { response } = useFetch('/api/post')
-        console.log(response);
+        // const { response } = useFetch('/api/post')
     },
     methods: {
         // 上傳檔案時調用
@@ -273,28 +271,8 @@ export default {
             }
         },
         // 發送 API
-        async sendSMS() {
-            try {
-                const response = await $fetch(
-                    'https://httpsms.rtl.hk/sms-server/sendsms',
-                    {
-                        method: 'POST',
-                        body:
-                        {
-                            clientid: "b0f0e2",
-                            password: "5690dddfa28ae085d23518a035707282",
-                            mobile: "00639650975003,00639057431218,00639056405133,00639928793385",
-                            content: this.SMSContent,
-                            extend: null,
-                            uid: null,
-                            sendtime: null
-                        }
-                    });
-                this.apiResponse = response;
-            } catch (error) {
-                // 處理錯誤...
-                console.log(error);
-            }
+        sendSMS() {
+            // $fetch('/api/sendSMS');
         },
     },
 };

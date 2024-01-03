@@ -8,7 +8,7 @@
             "type": "msedge",
             "request": "launch",
             "name": "client: msedge",
-            "url": "http://localhost:3000",
+            "url": "http://localhost:3030",
             "webRoot": "${workspaceFolder}"
         },
         {

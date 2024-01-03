@@ -1,22 +1,29 @@
 import mongoose from "mongoose";
 
 export default async () => {
-    const config = useRuntimeConfig();
+    const connUri = "mongodb://43.203.4.205:27717/";
     try {
-        const DB_OPTIONS = {
-            dbName: config.dbName,
-            user: config.user,
-            pass: config.pass,
-            authSource: config.authSource
-        }
-        // const DB_OPTIONS = {
-        //     dbName: "sample_airbnb",
-        //     user: "screen",
-        //     pass: "RplsnPs5L6xCgHR5"
-        // }
-        console.log("try......");
-        await mongoose.connect(config.dburl, DB_OPTIONS)
-        console.log("資料庫連線成功");
+        console.log("嘗試連線資料庫......");
+        // await mongoose.connect(config.dburl, DB_OPTIONS)
+        mongoose.promise = global.Promise;
+        await mongoose.connect(connUri, {
+            ssl: true,
+            tlsCAFile: `./mongoKey/ca.pem`,
+            tlsCertificateKeyFile: `./mongoKey/client.pem`,
+            directConnection: true,
+            tlsAllowInvalidHostnames: true,
+            tlsCertificateKeyFilePassword: "test1234",
+            serverSelectionTimeoutMS: 60000,
+        });
+
+        const connection = mongoose.connection;
+        connection.on("error", (err) => {
+            console.log("資料庫連線失敗：" + err);
+            //process.exit();
+        });
+        connection.once("open", () => {
+            console.log("資料庫連線成功");
+        });
     } catch (error) {
         console.log(error);
     }
