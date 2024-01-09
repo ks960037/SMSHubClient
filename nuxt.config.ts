@@ -78,5 +78,10 @@ export default defineNuxtConfig({
     user: process.env.DB_USER,
     pass: process.env.DB_PASSWORD,
     authSource: process.env.DB_AUTHSOURCE,
+  },
+  nitro: {
+    plugins: [
+        '@/plugins/dbconnection'
+    ]
   }
 });

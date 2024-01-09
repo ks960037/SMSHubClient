@@ -15,16 +15,17 @@ export default async () => {
             tlsCertificateKeyFilePassword: "test1234",
             serverSelectionTimeoutMS: 60000,
         });
+        console.log('DB connection established');
 
-        const connection = mongoose.connection;
-        connection.on("error", (err) => {
-            console.log("資料庫連線失敗：" + err);
-            //process.exit();
-        });
-        connection.once("open", () => {
-            console.log("資料庫連線成功");
-        });
+        //const connection = mongoose.connection;
+        //connection.on("error", (err) => {
+        //    console.log("資料庫連線失敗：" + err);
+        //    //process.exit();
+        //});
+        //connection.once("open", () => {
+        //    console.log("資料庫連線成功");
+        //});
     } catch (error) {
-        console.log(error);
+        console.error('DB connection failed', error);
     }
 }
